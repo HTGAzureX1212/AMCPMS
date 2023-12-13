@@ -16,8 +16,25 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-use amcpms_app::AmcpmsApp;
+use amcpms_core::fltk::app::{App, Scheme};
+use amcpms_core::fltk::prelude::FltkError;
+use amcpms_core::install_panic_hook;
 
-pub fn main() {
-    AmcpmsApp::new().run().unwrap();
+pub struct AmcpmsApp {
+    inner: App,
+}
+
+impl AmcpmsApp {
+    pub fn new() -> Self {
+        install_panic_hook();
+
+        let app = App::default().with_scheme(Scheme::Base);
+        Self {
+            inner: app,
+        }
+    }
+
+    pub fn run(self) -> Result<(), FltkError> {
+        self.inner.run()
+    }
 }

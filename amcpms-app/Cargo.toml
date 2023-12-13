@@ -1,5 +1,5 @@
 [package]
-name = "amcpms"
+name = "amcpms-app"
 version = "0.1.0"
 edition = "2021"
 authors = ["HTGAzureX1212."]
@@ -7,4 +7,4 @@ license = "GPL-3.0 only"
 rust-version = "1.76.0"
 
 [dependencies]
-amcpms-app = { path = "../amcpms-app" }
+amcpms-core = { path = "../amcpms-core" }
