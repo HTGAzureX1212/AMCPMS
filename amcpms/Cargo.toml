@@ -7,3 +7,5 @@ license = "GPL-3.0 only"
 rust-version = "1.76.0"
 
 [dependencies]
+fltk = "1.4.19"
+miette = { version = "5.10.0", features = ["fancy"] }
